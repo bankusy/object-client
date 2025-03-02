@@ -1,0 +1,66 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.cursor-circle {
+    position: fixed; /* 화면에 고정되어 마우스를 따라감 */
+    width: 20px;
+    height: 20px;
+    background-color: var(--negative-color); /* 반투명 빨간색 */
+    opacity: 0.6;
+    z-index: 10000;
+
+    border-radius: 50%; /* 원 모양 */
+    pointer-events: none; /* 클릭 방지 */
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    transition: transform 0.1s ease; /* 부드러운 이동 (선택 사항) */
+}
+
+:root {
+    --primary-color: #ffffff; /* 기본 색상 */
+    --secondary-color: #b8b8b8; /* 보조 색상 */
+    --negative-color: #09090b; /* 보조 색상 */
+    --border-color: #d0d0d0; /* 보조 색상 */
+    --text-color: #09090b; /* 텍스트 색상 */
+    --background-color: #ffffff; /* 배경 색상 */
+    --disabled-color: #909090; /* 텍스트 색상 */
+
+    --nav-width: 60px;
+    --panel-width: 300px;
+    --menu1-width: 300px;
+    --menu2-width: 300px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #09090b; /* 기본 색상 */
+        --secondary-color: #28272b; /* 보조 색상 */
+        --negative-color: #ffffff; /* 보조 색상 */
+        --border-color: #141414; /* 보조 색상 */
+        --text-color: #ffffff; /* 텍스트 색상 */
+        --disabled-color: #414141; /* 텍스트 색상 */
+        --background-color: #09090b; /* 배경 색상 */
+    }
+    body {
+        background-color: var(--background-color);
+    }
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*특정 부분 스크롤바 없애기*/
+
+.box {
+    -ms-overflow-style: none;
+}
+.box::-webkit-scrollbar {
+    display: none;
+}
